@@ -41,8 +41,8 @@ exports.updateBucket = function(req, res){
 }
 
 exports.deleteBucket = function(req, res){
-    db.Bucket.remove({_id: req.prams.bucketId})
-    .the(function(){
+    db.Bucket.remove({_id: req.params.bucketId})
+    .then(function(){
         res.json({message: "deleted!!"})
     })
     .catch(function(err){
